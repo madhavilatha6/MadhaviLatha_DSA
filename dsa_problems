@@ -1,0 +1,1242 @@
+// ////////////////////////1.Alpha numeric or not ////////////////////////////////////// 
+// public class Main{
+//     public static void main(String[] args){
+//    	 String str="madhulatha@123";
+//  String alpha="abcdefghijklmnopqrstuvwxyz";
+//    	 String number="0123456789";
+//    	 String special="!@#$%^&*";
+//    	 int alpha_count=0;
+//    	 int number_count=0;
+//    	 int special_count=0;
+//    	 for(int i=0;i<str.length();i++){
+//    	    	for(int j=0;j<alpha.length();j++){
+//    	   			 if(str.charAt(i)==alpha.charAt(j)){
+//        				 alpha_count++;
+//        			 }
+//    	    	} 			 
+//    	 }
+//    	 for(int i=0;i<str.length();i++){
+//    	    	for(int j=0;j<number.length();j++){
+//    	   			 if(str.charAt(i)==number.charAt(j)){
+//        				 number_count++;
+//        			 }
+//    	    	} 			 
+//    	 }
+//    	 for(int i=0;i<str.length();i++){
+//    	    	for(int j=0;j<special.length();j++){
+//    	   			 if(str.charAt(i)==special.charAt(j)){
+//        				 special_count++;
+//        			 }
+//    	    	} 			 
+//    	 }
+//    	 if(alpha_count > 0 && number_count > 0 && special_count > 0){
+//    		 System.out.println("yes");
+//    	 }else{
+//    		 System.out.println("no");
+//    	 }
+//     }
+// }
+
+
+
+// //////////////////2.second smallest and third largest//////////////////
+
+// public class Main{
+// 	 public static void main(String[] args){
+// 	 int[] arr={2,4,7,8,9,3,5,1,6};
+// 	 int thirdlarge=ThirdLarge(arr);
+// 	 int secondsmall=secondsmall(arr);
+// 	 System.out.println("Third number is "+ thirdlarge);
+// 	 System.out.println("second small is "+ secondsmall);
+// 	 }
+	 
+// 	 public static int ThirdLarge(int[] arr){
+// 		 int first=arr[0];
+// 		 int second=Integer.MIN_VALUE;
+// 		 int third=Integer.MIN_VALUE;
+// 		 for(int i=1;i<arr.length;i++){
+// 		 if(arr[i]  > first){
+// 		      third=second;
+// 		      second=first;
+// 		      first=arr[i];
+// 		  }else if(arr[i] > second){
+// 		      third=second;
+// 		      second=arr[i];
+// 		  }else if(arr[i] > third){
+// 		      third=arr[i];
+// 		  }
+// 	 }
+// 	 return third;
+// 	 }
+// 	 public static int secondsmall(int[] arr){
+// 	 int first=arr[0];
+// 	 int second=Integer.MAX_VALUE;
+// 	 for(int i=1;i<arr.length;i++){
+// 	 if(arr[i] < first){
+// 	 second=first;
+// 	 first=arr[i];
+// 	 }else if(arr[i] < second){
+// 	 first=arr[i];
+// 	 }
+// 	 }
+// 	 return second;
+// 	 }
+// 	 }
+	 
+ 	
+// ////////////////////3.Anagram or not////////////////
+
+// public class Main{
+// 	public static void main(String[] args){
+//     	String str1="madhu";
+//     	String str2="latha";
+//     	char[] A=str1.toCharArray();
+//     	char[] B=str2.toCharArray();
+//     	if(A.length != B.length){
+//         	System.out.println("not anagram");
+//     	}else{
+//         	int count=0;
+//         	for(int i=0;i<A.length;i++){
+//             	for(int j=0;j<B.length;j++){
+//                	if(A[i]==B[j]){
+//                    	count+=1;
+//                	}
+//                	System.out.print(B[j]);
+//             	}
+//             	System.out.println(A[i]);
+//         	}
+//         	if(count==A.length){
+//             	System.out.println(str1 + "-"+"anagram"+"-"+str2);
+//         	}else{
+//               	System.out.println(str1 + "-"+"not anagram"+"-"+str2);
+//         	}
+//     	}
+// 	}
+// }
+
+// ////////////////////4. Armstrong////////////////////////
+// public class Armstrong
+// {
+//     public static void main(String[]args)
+//     {
+// 	int num = 153;
+// 	String str= "" + num;
+// 	int len = str.length();
+// 	AmstrongNumber(num,len);
+//      }
+//      public static void AmstrongNumber(int num, int len){
+//      	int sum = 0;
+//      	int num1 = num;
+//      	while ( num > 0){
+//      		int rem = num % 10;
+//      		sum += Math.pow(rem,len);
+//      		num /= 10;
+//      	}
+//      	if(sum == num1){
+//      		System.out.println(num1+"amstrong Number");
+//      	}
+//      	else {
+//      		System.out.println(num1+"not amstrong number");
+//      	}
+//      }
+//  }
+
+// //////////////////////////5.Integer to Binary/////////////////////////
+
+
+// public class intbinary {
+// public static void main(String[] args)
+//     {
+//    	 int num = 20;
+//     	int[] binary = new int[45];
+//    	 int dec = 0;
+//    	 while (num > 0) {
+//    		 binary[dec++] = num % 2;
+//    		 num = num / 2;
+//    	 }
+//    	 for (int i = dec - 1; i >= 0; i--)
+//    		 System.out.print(binary[i] + "");
+//     	}    
+
+// }
+
+// ////////////////6.Write a program to check and reverse all words present in a string?
+// Example : input : “Welcome to the JTBB bootcamp”;
+// Output : “emoclew ot eht bbtj pmactoob”;///////////////////////////
+
+
+// class Main{
+// 	 public static void main(String[] args){
+// 		 String str=" welcome to jtbb boot camp";
+// 		 int start=0;
+// 		 int end=str.length();
+// 		 int count=0;
+// 		 while(start < end){
+// 			 while(start < end && str.charAt(start)!=' '){
+// 			      start++;
+// 			  }
+// 			  String temp=str.substring(count,start);
+// 			  reverse(temp);
+// 			  start=start+1;
+// 			  count=start;
+// 		 }
+// 	 }
+// 	 public static void reverse(String str){
+// 		 String bag="";
+// 		 for(int i=str.length()-1;i>=0;i--){
+// 			 bag+=str.charAt(i);
+// 		 }
+// 		 System.out.print(bag+" ");
+// 	 }
+//  }
+
+
+// ////////////////7. Write a program to replace 0’s with 1’s and 1’s with 0’s in a 2D Array?/////////////
+// Example : input : [[1,1,0],[0,0,1],[1,0,1]]
+// Output : [[0,0,1],[1,1,1],[0,1,0]]
+// public class replace {
+// 	public static void main(String[] args) {
+//     	int[][] arr = {{1, 1, 0}, {0, 0, 1}, {1, 0, 1}};
+//     	for (int i = 0; i < arr.length; i++) {
+//         	for (int j = 0; j < arr.length; j++) {
+//             	if (arr[i][j] == 0) {
+//                 	arr[i][j] = 1;
+//             	} else {
+//                 	arr[i][j] = 0;
+//             	}
+//         	}
+//     	}
+   	 
+//     	for (int i = 0; i < arr.length; i++) {
+//         	for (int j = 0; j < arr.length; j++) {
+//             	System.out.print(arr[i][j] + " ");
+//         	}
+//        	System.out.println();
+//     	}
+// 	}
+// }
+
+// /////////////*Write a program to check whether a string is palindrome or not?*///////////////////////
+// public class PalindromeCheck {
+//     public static void main(String[] args) {
+//         String str = "madam"; 
+//         if (isPalindrome(str)) {
+//             System.out.println("palindrome");
+//         } else {
+//             System.out.println("not a palindrome");
+//         }
+//     }
+//     public static boolean isPalindrome(String str) {
+//         if (str == null) {
+//             System.out.println("null");
+//             return false; 
+//         }   
+//         if (str.equals("")) {
+//             System.out.println("empty");
+//             return false; 
+//         }
+//         int left = 0;
+//         int right = str.length() - 1;
+//         while (left < right) {
+//             if (str.charAt(left) != str.charAt(right)) {
+//                 return false;
+//             }
+//             left++;
+//             right--;
+//         }
+//         return true;
+//     }
+// }
+// ////////////// Write a program to print all the substrings of a string whose length is equal to K value?
+// class subStringLengthK{
+//     public static void main(String[] args){
+//         String str = "nandana";
+//         int k =3;
+//         for(int i=0; i<str.length(); i++){
+//             String subStr = "";
+//             for(int j=i; j<str.length(); j++){
+//                 subStr+=str.charAt(j);
+                
+//                 if(subStr.length() ==k){
+//                     System.out.println(subStr);
+//                 }
+//             }
+//         }
+//     }
+// }
+
+
+// //Anagram//////////////////////////////
+
+// class HelloWorld {
+//     public static void main(String[] args) {
+//         String str="abcd";
+//         String str1="cdab";
+//         int[] res=new int[200];
+//         if(str.length()!=str1.length())
+//         {
+//             System.out.println("Not An Anagram");
+//         }
+//         else
+//         {
+//             for(int i=0;i<str.length();i++)
+//             {
+//                 res[str.charAt(i)]++;
+//             }
+//             for(int i=0;i<str1.length();i++)
+//             {
+//                 res[str1.charAt(i)]--;
+//             }
+//             for(int i=0;i<res.length;i++)
+//             {
+//                 if(res[i]!=0)
+//                 {
+//                     System.out.println("Not An Anagram");
+//                     return;
+//                 }
+//             }
+//              System.out.println("Anagram");
+//         }
+//     }
+// }
+
+// ////////////////////////////Duck Number///////////////////////////
+// class duplicate{
+//     public static void main(String[] args){
+//         String number = "10504";
+//         if(isDuckNumber(number))
+//         {
+//             System.out.println(number + "is a duck number");
+//         }
+//         else{
+//             System.out.println(number + "is not a duck number");
+//         }
+//     }
+//     public static boolean isDuckNumber(String numstr)
+//     {
+//         if(numstr.charAt(0) != '0')
+//         {
+// 		//System.out.println("Here");
+// 		for(int i = 1 ; i < numstr.length() ; i++)
+// 		{
+// 		    if(numstr.charAt(i) == '0')
+// 		    {
+// 		        return true;
+// 		    }
+// 		}
+// 	}
+	
+//         return false;
+//     }
+// }
+
+
+
+ 
+ 
+ 
+ 
+ 
+//  //////////////////////////////DIAGONALSUM//////////////////////
+// import java.util.Scanner;
+// class DiagonalSum
+// {
+// 	public static void main(String[] args)
+// 	{
+// 		//int[][] array = {{1,2,3},{4,5,6},{7,8,9}};
+		
+// 		//int row = 3;
+// 		//int col = 3;
+		
+// 		Scanner input = new Scanner(System.in);
+// 		int row = input.nextInt();
+// 		int col = input.nextInt();
+// 		int[][] array = new int[row][col];
+		
+// 		for(int i = 0;i<row;i++)
+// 		{
+// 			for(int j = 0;j<col;j++)
+// 			{
+// 				array[i][j] = input.nextInt();
+// 			}
+// 		}
+		
+		
+// 		for(int i = 0;i<row;i++)
+// 		{
+// 			for(int j = 0;j<col;j++)
+// 			{
+// 				System.out.print(array[i][j]);
+// 			}
+// 			System.out.println();
+// 		}
+		
+		
+		
+		
+// 		int i = 0;
+// 		int j = col-1;
+// 		int sum = 0;
+		
+// 		while(i<row && j>=0)
+// 		{
+// 			if(i == j){
+// 				sum += array[i][j];
+// 			}
+// 			else
+// 			{
+// 				sum += array[i][i] +array[i][j];
+// 			}
+// 			i++;
+// 			j--;
+// 		}
+		
+// 		System.out.println("Sum of diagonal elements: " + sum);
+// 	}
+// }
+
+ 
+//  ///////////////////////////Count All Duplicates////////////////////////
+
+// 	class HelloWorld {
+//     public static void main(String[] args) {
+//         int[] arr = {1, 1, 2, 2, 2, 3, 4, 5, 6, 6, 7, 7, 8, 8, 8,9,9};
+//         int count = countDuplicates(arr);
+//         System.out.println(count);
+//     }
+
+//     public static int countDuplicates(int[] arr) {
+//         int count = 0;
+
+//         for (int i = 0; i < arr.length - 1; i++) {
+//             int j = i + 1;
+//             while (j < arr.length && arr[i] == arr[j]) {
+//                 j++;
+//             }
+//             if (j > i + 1) {
+//                 count++;
+//             }
+//             i = j - 1; // Update i to the last index of the repeating element.
+//         }
+
+//         return count;
+//     }
+// }
+
+ 
+// ////////////////////Factorial Number/////////////////
+// import java.util.Scanner;
+
+// class Factorial {
+//     public static void main(String[] args) {
+//         Scanner input = new Scanner(System.in);
+//         int number = input.nextInt();
+
+//         int factorial = 1;
+//         for (int i = 1; i <= number; i++) {
+//             factorial *= i;
+//         }
+//         System.out.print(factorial);
+//     }
+// }
+
+
+
+// class factorial
+// {
+// 	public static void main(String[] args)
+// 	{
+// 		int num = 4;
+// 		System.out.println(factorialNum(num));
+// 	}
+// 	public static int factorialNum(int num)
+// 	{
+// 		int factorial = 1;
+// 		for(int i = 1;i <= num;i++)
+// 		{
+// 			factorial *= i;
+// 		}
+// 		return factorial;
+		
+// 	}
+// }
+
+// //////////////////////Integer to Binary//////////////////////////////
+
+// class HelloWorld {
+//     public static void main(String[] args) {
+//         int number=2;
+//         int num=number;
+//         String binary="";
+//         while(num>0)
+//         {
+//             int remainder=num%2;
+//             binary=remainder+binary;
+//             num=num/2;
+//         }
+//         System.out.println("Binary Number For "+number+" is : "+binary);
+//     }
+// }
+
+// Two sum :
+// import java.util.Scanner;
+// public class bubbleSort {
+// public static void main(String[] args)
+// {
+// Scanner input = new Scanner(System.in);
+// int size = input.nextInt();
+// int[] arr = new int[size];
+// for(int i = 0; i < size ;i++){
+// arr[i] = input.nextInt();
+// }
+// int target=input.nextInt();
+// Swappping(arr,target);
+// }
+// public static void Swappping(int[] arr,int target)
+// {
+// for(int i=0;i < arr.length;i++){
+// for(int j=i+1;j<arr.length;j++){
+// if(arr[i]+arr[j]==target){
+// System.out.println(arr[i]);
+// System.out.println(arr[j]);
+// break;
+// }
+// }
+// }
+// }
+// }
+
+// /////////////////////////////////bubble sort///////////////////////
+// public class bubbleSort {
+// public static void main(String[] args)
+// {
+// Swappping(new int[] {1,2,3,4,5,6},11);
+// }
+// public static void Swappping(int[] arr,int target)
+// {
+// for(int i=0;i < arr.length;i++){
+// for(int j=i+1;j<arr.length;j++){
+// if(arr[i]+arr[j]==target){
+// System.out.println(arr[i]);
+// System.out.println(arr[j]);
+// break;
+// }
+// }
+// }
+// }
+// }
+
+// Stacks with push and pop
+
+// class Node
+// {
+//     int data;
+//     Node next;
+// }
+
+// public class Stack
+// {
+//     static Node top = null;
+//     public static void push(int data)
+//     {
+//    	 Node temp = new Node();
+//    	 temp.data=data;
+//    	 temp.next=null;
+//    	 if(top == null)
+//    	 {
+//    		 top=temp;
+//    	 }
+//    	 else{
+//    		 temp.next=top;
+//    		 top=temp;
+//    	 }
+//     }
+//     public static void displayStack(){
+//    	 Node traverse = top;
+//    	 while(traverse != null){
+//    		 System.out.println(traverse.data);
+//    		 traverse=traverse.next;
+//    	 }
+//     }
+//     public static void pop(){
+//    	 Node temp=top;
+//    	 top=top.next;
+//    	 temp.next=null;
+//    	 System.out.print(temp.data);
+//     }
+    
+    
+//     public static void main(String[] args)
+//     {
+   	 
+//    	 Stack.push(10);
+//    	 Stack.push(20);
+//    	 Stack.push(30);
+//    	 Stack.push(40);
+//    	 Stack.push(50);
+//    	 Stack.push(60);
+//    	 Stack.push(70);
+//    	 Stack.pop();
+//    	 Stack.pop();
+//    	 Stack.displayStack();
+   	 
+//     }
+// }
+
+
+// ///////////////////////Queue with dequeue///////////////////////////
+
+
+// class Node {
+
+// 	int data;
+// 	Node next;
+    
+// }
+
+// public class Queue {
+
+ 
+// 	static Node first = null;
+
+// 	public static void queue(int data) {
+    
+//     	Node temp = new Node();
+//     	temp.data = data;
+//     	temp.next = null;
+//     	if (first == null) {
+//         	first = temp;
+//         	return;
+//     	}
+   	 
+//      	Node traverse = first;
+
+//     	while(traverse.next != null)
+//     	{
+//         	traverse = traverse.next;
+//     	}
+
+//     	traverse.next = temp;
+   	 
+   	 
+// 	}
+
+// 	public static void displayQueue() {
+    
+//     	Node traverse = first;
+//     	while (traverse != null) {
+//         	System.out.println(traverse.data);
+//         	traverse = traverse.next;
+//     	}
+// 	}
+
+// 	public static void dequeue() {
+//     	if (first == null) {
+//         	return;
+//     	}
+//     	 Node temp = first;
+//     	while(temp.next != null){
+//    		 /*first = first.next;*/
+//    		 temp = temp.next;
+//     	}
+//     	temp.next = null;	
+// }
+    
+//    public static void main(String[] args) {
+//     	Queue.queue(10);
+//     	Queue.queue(20);
+//     	Queue.queue(30);
+//     	Queue.queue(40);
+//     	Queue.queue(50);
+//     	Queue.queue(60);
+//     	Queue.queue(70);
+//   		 Queue.queue(80);
+//     	Queue.displayQueue();
+// 	}
+// }
+
+
+// //////////////////////////Linked List///////////////////////////
+    
+//      class Node
+// {
+//     int data;
+//     Node next;
+// }
+
+// public class Linkedlist
+// {
+//     static Node previous = null;
+//     static Node current = null;
+//     static Node first = null;
+    
+//     public static void insert ( int data )
+//     {
+//    	 Node temp = new Node();
+//    	 temp.data = data;
+//    	 temp.next = null;
+   	 
+//    	 if( first == null )
+//    	 {
+//    		 first = temp;
+//    		 return;
+//    	 }
+//    	 else{
+//    		 current = first;
+//    		 while ( current != null && current.data < temp.data )
+//    		 {
+//    		      previous = current;
+//    		      current = current.next;
+//    		  }
+//    	 }
+   	 
+//    	 //insert first
+   	 
+//    	 if( current == null && previous == null && first != null )
+//    	 {
+//    		 temp.next = first;
+//    		 first = temp;
+//    		 return;
+//    	 }
+   	 
+//    	 if( current != null && previous == null )
+//    	 {
+//    		 temp.next = current;
+//    		 first =temp;
+//    	 }
+   	 
+//    	 //insert middle
+   	 
+//    	 if( previous != null && current != null )
+//    	 {
+//    	      previous.next = temp;
+//    	      temp.next = current;
+//    	      return;
+//    	 }
+   	 
+//    	 //insert end
+   	 
+//    	 if( current == null && previous != null )
+//    	 {
+//    		 previous.next = temp;
+//    		 temp = current;
+//    		 return;
+//    	 }
+//     }
+    
+    
+//      public static Node reverse(Node first) {
+//    	 if (first == null || first.next == null) {
+//    	 	return first;
+//    	 }
+
+//    	 Node previous = first;
+//    	 Node current = previous.next;
+//    	 previous.next = null;
+
+//    	 while (current != null) {
+//    	 	Node temp = current;
+//    	 	current = current.next;
+//    	 	temp.next = previous;
+//    	 	previous = temp;
+//    	 }
+//    	 return previous;
+//       }
+      
+   	 
+//     public static void display()
+//     {
+//    	 Node traverse = first;
+//    	 while ( traverse != null )
+//    	 {
+//    		 System.out.println( traverse.data );
+//    		 traverse = traverse.next;
+//    	 }
+   	 
+//     }
+    
+//     public static void main ( String[] args)
+//     {
+//    	 Linkedlist.insert(1);
+//    	 Linkedlist.insert(4);
+//    	 Linkedlist.insert(6);
+//    	 Linkedlist.insert(2);
+//    	 Linkedlist.insert(5);
+//    	 Linkedlist.insert(8);
+//    	 Linkedlist.insert(7);
+//    	 Linkedlist.insert(9);
+//    	 Linkedlist.display();
+   	 
+//    	 System.out.println("Reverse Linked List");
+   	 
+//    	 first = Linkedlist.reverse(first);
+//    		 Linkedlist.display();
+//     }
+// }
+
+
+// /////////////////////////Trees//////////////////////////
+
+// class Node
+// {
+//     int data;
+//     Node left;
+//     Node right;
+// }
+
+// public class Trees
+// {
+
+//     public static void Inorder ( Node root )
+//     {
+//    	 if ( root == null )
+//    	 {
+//    		 return;
+//    	 }
+   	 
+//    	 Inorder ( root.left );
+//    	 System.out.println ( root.data );
+//    	 Inorder ( root.right );
+//     }
+    
+//     public static void preorder ( Node root )
+//     {
+//    	 if ( root == null )
+//    	 {
+//    		 return;
+//    	 }
+   	 
+//    	 System.out.println(root.data);
+//    		 preorder(root.left);      	 
+//    		 preorder(root.right);
+//     }
+    
+//     public static void postorder ( Node root )
+//     {
+//    	 if ( root == null )
+//    	 {
+//    		 return;
+//    	 }
+   	 
+//    		 postorder(root.left);      	 
+//    		 postorder(root.right);
+//    		 System.out.println(root.data);
+//     }
+
+//     public static Node insert ( int data,Node root )
+//     {
+//    	 if ( root == null )
+//    	 {
+//    		 root = new Node();
+//    		 root.data = data;
+//    		 return root;
+//    	 }
+   	 
+//    	 if ( data < root.data )
+//    	 {
+//    		 root.left = insert ( data,root.left );
+//    	 }
+   	 
+//    		 if ( data >= root.data )
+//    		 {
+//    			 root.right = insert ( data,root.right);
+//    		 }
+//    		 return root;
+//     }
+
+
+//     public static void main ( String[] args )
+//     {
+    
+
+//    	 Node root = new Node();
+//    	 root.data = 66;
+   	 
+//    	 root.left = new Node();
+//    	 root.left.data = 30;
+   	 
+//    	 root.right = new Node();
+//    	 root.right.data = 40;
+   	 
+//    	 root.left.left = new Node();
+//    	 root.left.left.data = 25;
+   	 
+//    	 root.left.right = new Node();
+//    	 root.left.right.data = 32;
+   	 
+//    	 root.right.left = new Node();
+//    	 root.right.left.data = 35;
+   	 
+//    	 root.right.right = new Node();
+//    	 root.right.right.data = 45;
+   	 
+   	 
+   	 
+//    	 System.out.println("Inorder method");
+//    	 Trees.Inorder(root);
+   	 
+//    	 System.out.println("preorder method");
+//    	 Trees.preorder(root);
+   	 
+//    	 System.out.println("postorder method");
+//    	 Trees.postorder(root);
+   	 
+//    	 System.out.println("insert method");
+//    	 root = insert(44,root);
+   	 
+//    	 System.out.println(root.data);
+//    	 System.out.println(root.left.data);
+//    	 System.out.println(root.right.data);
+//    	 System.out.println(root.left.left.data);
+//    	 System.out.println(root.left.right.data);
+//    	 System.out.println(root.right.left.data);
+//    	 System.out.println(root.right.right.data);
+   	 
+//     }
+// }
+
+
+   	 
+//       	    output:
+
+   	 
+   	 
+//  /////////////////////Recursion///////////////////  	 
+   
+// ///////////////1.Calculate the sum of all elements in an array using recursion.
+   	 
+// public class Recursion {
+// 	public static int SumRecursion(int[] arr, int i, int size, int sum) {
+//     	if (i == size) {
+//         	return sum;
+//     	}
+//     	sum = sum + arr[i];
+//     	return SumRecursion(arr, ++i, size, sum);
+// 	}
+
+// 	public static void main(String[] args) {
+//     	int[] arr = { 1,2,3,4,5 };
+//     	if(arr == null){
+//         	return;
+//     	}
+//     	System.out.print(SumRecursion(arr, 0, arr.length, 0));
+// 	}
+// }
+
+//  ///////////////////2.Reverse a string using recursion./////////////////////////  	 
+   	 
+//   Method:01
+
+ 	 
+  
+//    	public class ReverseString {
+//     public static void main(String[] args)
+//     {
+//         String str = "durga";
+//         int start = 0;
+//         int end = str.length() - 1;
+//         int i = 0;
+//         String bag = reverseString(str, start, end, i, "");
+//         System.out.println(bag);
+//     }
+
+//     public static String reverseString(String str, int start, int end, int i, String bag) {
+//         if (start > end)
+//          {
+//             return bag;
+//         }
+       
+//         bag = bag + str.charAt(end);
+       
+//         return reverseString(str, start, end - 1, i, bag);
+//     }
+// }
+
+//  Method:02
+
+
+// public class reverseString{
+// 	public static void Reverse(int start , int end , char[] string)
+// 	{
+//     	if(start >= end){
+//         	return;
+//     	}
+//         	char temp = string[start];
+//         	string[start] = string[end];
+//         	string[end] = temp;
+//         	Reverse(start+1 , end-1 , string);
+// 	}
+// 	public static void main(String[] args){
+//     	String str = "madhavi latha";
+//     	char[] string = str.toCharArray();
+//     	Reverse(0,string.length-1,string);
+//     	System.out.print(string);
+// 	}
+    
+// }
+
+
+// Methode 3:
+// class Recursion
+// {
+// 	public static void main(String[] args)
+// 	{
+// 		String str="Bhavana";
+// 		reverseString(str,str.length()-1,"",7);
+// 	}
+// 	public static void reverseString(String str,int i,String bag,int size)
+// 	{
+// 		if(i<0)
+// 		{
+// 			System.out.println("Reverse String : "+bag);
+// 			return;
+// 		}
+// 		bag+=str.charAt(i);
+// 		reverseString(str,--i,bag,size);
+// 	}
+// }
+
+
+// //////////////////////3.Check if a string is a palindrome using recursion.////////////////////
+
+// public class palindrome{
+//     public static void Reverse Palindrome(int start , int end , char[] string)
+//     {
+//    	 if(start >= end){
+//    		 return;
+//    	 }
+//    		 char temp = string[start];
+//    		 string[start] = string[end];
+//    		 string[end] = temp;
+    
+//    		 Reverse Palindrome(start+1 , end-1 , string);
+   	 
+//     }
+//     public static void main(String[] args){
+//    	 String str = "madhavi";
+//    	 char[] string = str.toCharArray();
+//     	Reverse Palindrome(0,string.length-1,string);
+//     	String rev = new String(string);
+//    		 if( str.equals(rev)){
+//    		 	System.out.println("palindrome");
+//    		 }
+//    		 else{
+//    		 	System.out.println("not palindrome"+" ");
+//    		 }
+//    	 System.out.print(string);
+//     }
+    
+// }
+
+// //////////////////4.Calculate the nth Fibonacci number using recursion./////////////////////////////////////
+   	 
+//    	 public class fibonacci{
+// 	public static int fibonacci(int n,int n1,int n2,int n3,int i){
+//     	if(i == n){
+//       	return n3;
+//     	}
+//     	n3=n1+n2;
+//   	return  fibonacci(n , n2, n3 , n3 , ++i);
+   	 
+// 	}
+    
+// 	public static void main(String[] args){
+   	 
+//  	int n=7;
+//  	int n1=0;
+//  	int n2=1;
+//  	int n3=n1+n2;
+//  	int i=2;
+//  	System.out.print(fibonacci(n,n1,n2,n3,i));
+// 	}
+// }
+
+// /////////////////5.Find the factorial of a positive integer using recursion./////////////////
+   	 
+   	 
+//    	 public class factorial{
+// 	public static int factorial(int num,int fact, int i){
+//     	if(i <= num){
+//         	fact*=i;
+//         	return factorial(num,fact,++i);
+//     	}
+//     	return fact;
+// 	}
+    
+// 	public static void main(String[] args){
+//     	int num = 7;
+//     	int fact = 1;
+//     	int i=1;
+//     	System.out.print(factorial(num,fact,i));
+// 	}
+// }
+
+// ///////////////6.Calculate the sum of digits in a positive integer using recursion.///////////////
+// public class sumofdigits
+// {
+// 	public static int positiveint( int num , int i , int sum , int rem)
+// 	{
+//     	if (i>num)
+//     	{
+//         	return sum;
+//     	}
+//     	rem = num % 10;
+//     	sum = sum + rem;
+//     	num = num / 10;
+   	 
+//     	return positiveint ( num , ++i , sum , rem);
+// 	}
+// 	public static void main(String[] args)
+// 	{
+//     	int num = 25;
+//     	int i = 0;
+//     	int sum = 0;
+//     	int rem = 0;
+//     	System.out.print(positiveint( num , i , sum , rem));
+// 	}
+// }
+
+// /////////7.Find the greatest common divisor (GCD) of two positive integers using recursion.///
+
+// public class GCD{
+// 	public static int commonNumber(int num1 , int num2 , int i , int  common){
+//     	if( i > num1 || i > num2){
+//         	return common;
+//     	}
+//     	if( num1 % i == 0 && num2 % i == 0){
+//         	common = i;
+//     	}
+//     	return commonNumber(num1 , num2 ,++i ,common);
+// 	}
+// 	public static void main(String[] args){
+//     	int num1 = 1;
+//     	int num2 = 70;
+//     	int i=1;
+//     	int common = 0;
+//     	System.out.print(commonNumber(num1,num2,i,common));
+   	 
+// 	}
+// }
+
+// ///////8.Check if a given array is sorted in ascending order using recursion.//////
+// public  class asending{
+//     public static boolean accendingorder(int[] arr , int index )
+//     {
+//    	 if ( index >= arr.length-1 )
+//    	 {
+//    		 return true;
+//    	 }
+   	 
+//    	 if ( index > arr[index + 1] )
+//    	 {
+//    		 return false;
+//    	 }
+   	 
+//    	 return accendingorder ( arr , index+1 );
+//     }
+//     public static void main (String[] args)
+//     {
+//    	 int[] arr = {1,2,3,4,5};
+//    	 System.out.print(accendingorder(arr , 0));
+//     }
+// }
+
+// /////////////9.Find the power of a number using recursion.////////
+
+// ///////////////10.Find the length of a string using recursion./////////////////
+
+
+// public class lengthString{
+// 	public static int LengthStr(String str,int i,int count){
+//     	if(i == str.length()){
+//         	return count;
+//     	}
+//    	return LengthStr(str,++i,++count);
+   	 
+// 	}
+// 	public static void main(String[] args){
+//     	String str="madhavi latha";
+//     	int i=0;
+//     	int count=0;
+//     	System.out.print(LengthStr(str,i,count));
+// 	}
+// }
+   	
+
+// //////////11.Print the elements of an array in reverse order using recursion.//////////// 
+   	 
+// public class ReverseArray {
+// 	public static void reverse(int[] arr, int start, int end) {
+//     	if (start >= end) {
+//         	return;
+//     	}
+//     	int temp = arr[start];
+//     	arr[start] = arr[end];
+//     	arr[end] = temp;
+// reverse(arr, start + 1, end - 1);
+// 	}
+
+// 	public static void printArray(int[] arr, int start) {
+//     	if (start >= arr.length) {
+//         	return;
+//     	}
+
+//     	System.out.print(arr[start] + " ");
+
+//     	printArray(arr, start + 1) ;
+// 	}
+
+// 	public static void main(String[] args) {
+//     	int[] arr = {1, 2, 3, 4, 5};
+
+//     	reverse(arr, 0, arr.length - 1);
+
+//     	printArray(arr, 0);
+// 	}
+// }
+
+// //////////Problem 12: Find the sum of even numbers in an array using recursion.////////////
+   	 
+//    	public class Sumofnumber{
+// 	public static int number (int[] arr , int i ,int sum,int size){
+//     	if(i == size ){
+//         	return  sum;
+//     	}
+//     	if(arr[i] % 2== 0){
+//         	sum = sum + arr[i];
+//     	}
+//     	return number(arr,i+1,sum,size);
+// 	}
+// 	public static void main(String[] args){
+//     	int[] arr = {1,2,3,4,5};
+//     	System.out.print(number(arr,0,0,arr.length));
+// 	}
+// }
+ 
+
+// //////////Problem 13: Find the maximum element in an array using recursion.//////////
+  
+// public class maxvalue{
+// 	public static int max(int[] arr , int i,int max){
+//     	if(i == arr.length){
+//         	return max;
+//     	}
+//     	if(arr[i] <= max){
+//         	max = arr[i];
+//     	}
+//     	return max(arr,++i,max);
+// 	}
+// 	public static void main(String[] args){
+//     	int[] arr = {1,2,3,4,5};
+//     	System.out.print(max(arr,0,Integer.MAX_VALUE));
+// 	}
+// }
+   	 
+   	 
+   	 
+   	 
+    	
+
+    
+
+
